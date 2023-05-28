@@ -8,3 +8,5 @@ unzip /tmp/frontend.zip
 mv frontend-main/static/* .
 mv frontend-main/localhost.conf /etc/nginx/default.d/roboshop.conf
 systemctl restart nginx
+
+sed -i -e 's/localhost/172.31.24.111/catalogue' /etc/nginx/default.d/roboshop.conf
