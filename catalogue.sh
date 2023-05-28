@@ -7,3 +7,5 @@ unzip /tmp/catalogue.zip
 mv catalogue-main catalogue
 cd /home/roboshop/catalogue
 npm install
+
+sed -i -e 's/MONGO_DNSNAME/172.31.26.27/' /home/roboshop/catalogue/systemd.service
