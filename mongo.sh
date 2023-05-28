@@ -3,7 +3,7 @@ yum install -y mongodb-org
 systemctl enable mongod
 systemctl start mongod
 
-sed 's/127.0.0.1/0.0.0.0/' mongod.conf
+sed 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
 systemctl restart mongod
 #curl -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip"
 
