@@ -3,10 +3,10 @@ yum install -y mongodb-org
 systemctl enable mongod
 systemctl start mongod
 
-PRINT "change of line"
 sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
 
-PRINT "mongod restart"
+
+
 systemctl restart mongod
 #curl -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip"
 
