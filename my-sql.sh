@@ -6,4 +6,4 @@ systemctl start mysqld
 grep temp /var/log/mysqld.log
 #ALTER USER 'root'@'localhost' IDENTIFIED BY 'RoboShop@1';
 #SET PASSWORD FOR 'root'@'localhost' = PASSWORD 'RoboShop@1';
-ALTER USER 'root'@'localhost' IDENTIFIED WITH 'RoboShop@1';
+#ALTER USER 'root'@'localhost' IDENTIFIED WITH 'RoboShop@1';
