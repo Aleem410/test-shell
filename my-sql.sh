@@ -30,6 +30,7 @@ echo enable mysql
 systemctl enable mysqld
 STAT $?
 
+
 echo start mysql
 systemctl start mysqld
 STAT $?
