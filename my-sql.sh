@@ -2,22 +2,27 @@ curl -s -L -o /etc/yum.repos.d/mysql.repo https://raw.githubusercontent.com/robo
 if [ $? -eq 0 ]
 then
   echo "SUCCESS"
+fi
 dnf module disable mysql
 if [ $? -eq 0 ]
 then
   echo "SUCCESS"
+fi
 yum install mysql-community-server -y
 if [ $? -eq 0 ]
 then
   echo "SUCCESS"
+fi
 systemctl enable mysqld
 if [ $? -eq 0 ]
 then
   echo "SUCCESS"
+fi
 systemctl start mysqld
 if [ $? -eq 0 ]
 then
   echo "SUCCESS"
+fi
 
 echo show databases | mysql -uroot -pRoboShop@1
 if [ $? -ne 0 ]
