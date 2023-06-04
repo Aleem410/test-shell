@@ -43,7 +43,7 @@ then
 fi
 PASSWORD=RoboShop@1
 
-if [ -z "$PASSWORD" ]
+if [[ -z "$PASSWORD" ]]
 then
   echo enter root password
  fi
