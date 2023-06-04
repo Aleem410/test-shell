@@ -1,8 +1,13 @@
 curl -s -L -o /etc/yum.repos.d/mysql.repo https://raw.githubusercontent.com/roboshop-devops-project/mysql/main/mysql.repo
+echo $?
 dnf module disable mysql
+echo $?
 yum install mysql-community-server -y
+echo $?
 systemctl enable mysqld
+echo $?
 systemctl start mysqld
+echo $?
 
 echo show databases | mysql -uroot -pRoboShop@1
 if [ $? -ne 0 ]
