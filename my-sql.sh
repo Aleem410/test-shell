@@ -15,7 +15,6 @@ STAT() {
     exit
   fi
 }
-
 echo dowmload mysql repo
 curl -s -L -o /etc/yum.repos.d/mysql.repo https://raw.githubusercontent.com/roboshop-devops-project/mysql/main/mysql.repo
 STAT $?
