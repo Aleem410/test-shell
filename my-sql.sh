@@ -45,7 +45,7 @@ PASSWORD=RoboShop@1
 
 echo SECURE INSTALLATION
 mysql_secure_installation
-if [ -z $PASSWORD ]
+if [ -n $PASSWORD ]
 then
   echo enter root password
  fi
