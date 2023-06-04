@@ -41,9 +41,9 @@ then
  DEFAULT_PASSWORD=$(grep 'A temporary password' /var/log/mysqld.log | awk '{print $NF}')
  cat /tmp/sql_root_passwd | mysql --connect-expired-password -uroot -p"${DEFAULT_PASSWORD}"
 fi
-PASSWORD=RoboShop@1
 
-if [[ -z "$PASSWORD" ]]
+
+if [[ -z "$USER" ]]
 then
   echo enter root password
  fi
