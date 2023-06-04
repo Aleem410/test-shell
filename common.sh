@@ -18,7 +18,7 @@ PRINT "DOWNLOADING ZIP FILE"
   STAT $?
 
   PRINT "REMOVE PRVIOUS VERSION"
-  cd /home/roboshop
+  cd $APP_LOC
     rm -rf *
     STAT $?
 
