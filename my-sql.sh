@@ -1,7 +1,7 @@
 my_sql_password=$1
 if [ -z $1 ]
 then
-  PASSWORD is required
+  echo PASSWORD is required
   exit
 fi
 echo dowmload mysql repo
