@@ -34,6 +34,7 @@ then
 fi
 
 echo show databases | mysql -uroot -pRoboShop@1
+
 if [ $? -ne 0 ]
 then
  echo "ALTER USER 'root'@'localhost' IDENTIFIED BY 'RoboShop@1';" > /tmp/sql_root_passwd
@@ -48,14 +49,15 @@ then
   echo "SUCCESS"
 fi
 
-echo LOGIN MYSQL
-mysql -uroot -pRoboShop@1
-if [ $? -eq 0 ]
-then
-  echo "SUCCESS"
-fi
+#echo LOGIN MYSQL
+#mysql -uroot -pRoboShop@1
+#if [ $? -eq 0 ]
+#then
+#  echo "SUCCESS"
+#fi
 
 echo UNISTALL PLUGIN
+
 uninstall plugin validate_password;
 if [ $? -eq 0 ]
 then
