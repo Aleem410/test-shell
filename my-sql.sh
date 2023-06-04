@@ -1,5 +1,5 @@
 source common.sh
-
+COMPONENT=mysql
 if [ -z "$1" ]
 then
   echo PASSWORD is required
@@ -9,7 +9,7 @@ my_sql_password=$1
 
 
 echo dowmload mysql repo
-curl -s -L -o /etc/yum.repos.d/mysql.repo https://raw.githubusercontent.com/roboshop-devops-project/mysql/main/mysql.repo
+curl -s -L -o /etc/yum.repos.d/${COMPONENT}.repo https://raw.githubusercontent.com/roboshop-devops-project/${COMPONENT}/main/${COMPONENT}.repo
 STAT $?
 
 if [ $? -ne 0 ]
@@ -47,9 +47,10 @@ echo uninstall plugin validate_password; | mysql -uroot -p${my-sql-password}
 fi
 STAT $?
 
-#curl -s -L -o /tmp/mysql.zip "https://github.com/roboshop-devops-project/mysql/archive/main.zip"
-#cd /tmp
-## unzip mysql.zip
-## cd mysql-main
-## mysql -u root -pRoboShop@1 <shipping.sql
+
+curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/roboshop-devops-project/${COMPONENT}/archive/main.zip"
+cd /tmp
+ unzip ${COMPONENT}.zip
+ cd ${COMPONENT}-main
+ mysql -u root -p${my_sql_password} <shipping.sql
 
