@@ -39,7 +39,6 @@ if [ $? -eq 0 ]
 then
   echo "SUCCESS"
 fi
-
 curl -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip"
 
 cd /tmp

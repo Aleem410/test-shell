@@ -16,11 +16,11 @@ my_sql_password=$1
 #}
 echo dowmload mysql repo
 curl -s -L -o /etc/yum.repos.d/mysql.repo https://raw.githubusercontent.com/roboshop-devops-project/mysql/main/mysql.repo
-STAT $?
+#STAT $?
 
 echo disable dnf module
 dnf module disable mysql -y
-STAT $?
+#STAT $?
 
 #echo install mysql
 #yum install mysql-community-server -y
