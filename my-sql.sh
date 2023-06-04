@@ -41,9 +41,9 @@ then
  cat /tmp/sql_root_passwd | mysql --connect-expired-password -uroot -p"${DEFAULT_PASSWORD}"
 fi
 
-echo "show plugins" | mysql -uroot -p${my-sql-password} | grep validate_password
+echo "show plugins" | mysql -uroot -p${my_sql_password} | grep validate_password
 if [ $? -eq 0 ]; then
-echo uninstall plugin validate_password; | mysql -uroot -p${my-sql-password}
+echo uninstall plugin validate_password; | mysql -uroot -p${my_sql_password}
 fi
 STAT $?
 
