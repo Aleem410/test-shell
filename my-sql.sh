@@ -17,10 +17,10 @@ STAT() {
 echo dowmload mysql repo
 curl -s -L -o /etc/yum.repos.d/mysql.repo https://raw.githubusercontent.com/roboshop-devops-project/mysql/main/mysql.repo
 STAT $?
-
-echo disable dnf module
-dnf module disable mysql
-STAT $?
+#
+#echo disable dnf module
+#dnf module disable mysql
+#STAT $?
 
 echo install mysql
 yum install mysql-community-server -y
