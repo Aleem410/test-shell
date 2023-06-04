@@ -41,13 +41,18 @@ then
  DEFAULT_PASSWORD=$(grep 'A temporary password' /var/log/mysqld.log | awk '{print $NF}')
  cat /tmp/sql_root_passwd | mysql --connect-expired-password -uroot -p"${DEFAULT_PASSWORD}"
 fi
+PASSWORD=RoboShop@1
 
 echo SECURE INSTALLATION
 mysql_secure_installation
-if [ $? -eq 0 ]
+if [ -z $PASSWORD ]
 then
-  echo "SUCCESS"
-fi
+  echo enter root password
+ fi
+#if [ $? -eq 0 ]
+#then
+#  echo "SUCCESS"
+#fi
 
 #echo LOGIN MYSQL
 #mysql -uroot -pRoboShop@1
