@@ -47,13 +47,9 @@ then
 fi
 
 
-#echo SECURE INSTALLATION
-#mysql_secure_installation
-#
-#if [ $? -eq 0 ]
-#then
-#  echo "SUCCESS"
-#fi
+echo SECURE INSTALLATION
+mysql_secure_installation
+STAT $?
 
 #echo LOGIN MYSQL
 #mysql -uroot -pRoboShop@1
