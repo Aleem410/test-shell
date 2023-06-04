@@ -56,7 +56,7 @@ fi
 #  echo "SUCCESS"
 #fi
 #
-echo show plugins
+echo "show plugins" | mysql -uroot -pRoboShop@1
 #echo UNISTALL PLUGIN
 #
 #uninstall plugin validate_password;
