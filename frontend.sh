@@ -1,4 +1,6 @@
 source common.sh
+COMPONENT=frontend
+
 echo INstall NGINX
 yum install nginx -y
 STAT $?
@@ -11,14 +13,15 @@ STAT $?
 #systemctl start nginx
 #STAT $?
 
-curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
+curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/roboshop-devops-project/${COMPONENT}/archive/main.zip"
+
 STAT $?
 
 cd /usr/share/nginx/html
 rm -rf *
-unzip /tmp/frontend.zip
-mv frontend-main/static/* .
-mv frontend-main/localhost.conf /etc/nginx/default.d/roboshop.conf
+unzip /tmp/${COMPONENT}.zip
+mv ${COMPONENT}-main/static/* .
+mv ${COMPONENT}-main/localhost.conf /etc/nginx/default.d/roboshop.conf
 #systemctl restart nginx
 STARTUP
 sed -i -e '/catalogue/ s/localhost/172.31.24.111/' -e '/user/ s/localhost/172.31.22.94/' /etc/nginx/default.d/roboshop.conf
