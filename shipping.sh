@@ -17,7 +17,16 @@ APP_LOC=/home/roboshop
 #cd /home/roboshop
 #$ curl -s -L -o /tmp/shipping.zip "https://github.com/roboshop-devops-project/shipping/archive/main.zip"
 #$ unzip /tmp/shipping.zip
+PRINT "COMPONENT"
 mv $COMPONENT-main $COMPONENT
+STAT $?
+
+PRINT "ENTER"
 cd $COMPONENT
- mvn clean package
- mv target/$COMPONENT-1.0.jar $COMPONENT.jar
+STAT $?
+
+PRINT "MVN CLEAN"
+mvn clean package
+STAT $?
+
+mv target/$COMPONENT-1.0.jar $COMPONENT.jar
