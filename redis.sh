@@ -1,10 +1,15 @@
 source common.sh
+COMPONENT=redis
+
+PRINT "redis repo"
 dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y
 STAT $?
 
+PRINT "REDIS MODULE ENABLE"
 dnf module enable redis:remi-6.2 -y
 STAT $?
 
+PRINT "INSTALL REDIS"
 yum install redis -y
 STAT $?
 
