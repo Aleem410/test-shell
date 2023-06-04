@@ -13,14 +13,15 @@ PRINT() {
 }
 
 DOWNLOAD_APP_CODE() {
+PRINT "REMOVE PRVIOUS VERSION"
+  cd $APP_LOC
+    rm -rf *
+    STAT $?
+
 PRINT "DOWNLOADING ZIP FILE"
   curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/roboshop-devops-project/${COMPONENT}/archive/main.zip"
   STAT $?
 
-  PRINT "REMOVE PRVIOUS VERSION"
-  cd $APP_LOC
-    rm -rf *
-    STAT $?
 
   PRINT "EXTRACTING APP CONTENT"
   unzip /tmp/${COMPONENT}.zip
