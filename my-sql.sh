@@ -49,12 +49,12 @@ then
   echo "SUCCESS"
 fi
 
-#echo LOGIN MYSQL
-#mysql -uroot -pRoboShop@1
-#if [ $? -eq 0 ]
-#then
-#  echo "SUCCESS"
-#fi
+echo LOGIN MYSQL
+mysql -uroot -pRoboShop@1
+if [ $? -eq 0 ]
+then
+  echo "SUCCESS"
+fi
 
 echo UNISTALL PLUGIN
 
