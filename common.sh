@@ -42,13 +42,14 @@ NODEJS() {
  fi
   STAT $?
 
-  PRINT "DOWNLOADING ZIP FILE"
-  curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/roboshop-devops-project/${COMPONENT}/archive/main.zip"
-  STAT $?
-
-  cd /home/roboshop
-  rm -rf *
-  unzip /tmp/${COMPONENT}.zip
+DOWNLOAD_APP_CODE
+#  PRINT "DOWNLOADING ZIP FILE"
+#  curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/roboshop-devops-project/${COMPONENT}/archive/main.zip"
+#  STAT $?
+#
+#  cd /home/roboshop
+#  rm -rf *
+#  unzip /tmp/${COMPONENT}.zip
   mv ${COMPONENT}-main cart
   cd ${COMPONENT}
 
