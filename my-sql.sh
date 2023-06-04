@@ -33,7 +33,7 @@ STAT $?
 echo start mysql
 systemctl start mysqld
 STAT $?
-echo show databases | mysql -uroot -p"${my_sql_password}"
+echo show databases | mysql -uroot -p${my_sql_password}
 
 if [ $? -ne 0 ]
 then
