@@ -22,26 +22,26 @@ echo disable dnf module
 dnf module disable mysql -y
 STAT $?
 
-echo install mysql
-yum install mysql-community-server -y
-STAT $?
-
-echo enable mysql
-systemctl enable mysqld
-STAT $?
-
-
-echo start mysql
-systemctl start mysqld
-STAT $?
-echo show databases | mysql -uroot -p${my_sql_password}
-
-if [ $? -ne 0 ]
-then
- echo "ALTER USER 'root'@'localhost' IDENTIFIED BY '${my_sql_password}';" > /tmp/sql_root_passwd
- DEFAULT_PASSWORD=$(grep 'A temporary password' /var/log/mysqld.log | awk '{print $NF}')
- cat /tmp/sql_root_passwd | mysql --connect-expired-password -uroot -p"${DEFAULT_PASSWORD}"
-fi
+#echo install mysql
+#yum install mysql-community-server -y
+#STAT $?
+#
+#echo enable mysql
+#systemctl enable mysqld
+#STAT $?
+#
+#
+#echo start mysql
+#systemctl start mysqld
+#STAT $?
+#echo show databases | mysql -uroot -p${my_sql_password}
+#
+#if [ $? -ne 0 ]
+#then
+# echo "ALTER USER 'root'@'localhost' IDENTIFIED BY '${my_sql_password}';" > /tmp/sql_root_passwd
+# DEFAULT_PASSWORD=$(grep 'A temporary password' /var/log/mysqld.log | awk '{print $NF}')
+# cat /tmp/sql_root_passwd | mysql --connect-expired-password -uroot -p"${DEFAULT_PASSWORD}"
+#fi
 
 
 #echo SECURE INSTALLATION
