@@ -14,7 +14,7 @@ STAT $?
 #systemctl start nginx
 #STAT $?
 DOWNLOAD_APP_CODE
-exit
+
 #curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/roboshop-devops-project/${COMPONENT}/archive/main.zip"
 #
 #STAT $?
