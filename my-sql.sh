@@ -51,12 +51,9 @@ echo SECURE INSTALLATION
 mysql_secure_installation
 STAT $?
 
-#echo LOGIN MYSQL
-#mysql -uroot -pRoboShop@1
-#if [ $? -eq 0 ]
-#then
-#  echo "SUCCESS"
-#fi
+echo LOGIN MYSQL
+mysql -uroot -p${my_sql_password}
+STAT $?
 #
 #echo "show plugins" | mysql -uroot -p${my-sql-password} | grep validate_password
 #echo UNISTALL PLUGIN
