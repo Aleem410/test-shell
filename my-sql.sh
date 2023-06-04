@@ -18,8 +18,11 @@ echo dowmload mysql repo
 curl -s -L -o /etc/yum.repos.d/mysql.repo https://raw.githubusercontent.com/roboshop-devops-project/mysql/main/mysql.repo
 STAT $?
 
+if [ $? -ne 0 ]
+then
 echo disable dnf module
 dnf module disable mysql
+fi
 STAT $?
 
 echo install mysql
