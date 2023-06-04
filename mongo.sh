@@ -1,4 +1,6 @@
 source common.sh
+COMPONENT=mongo
+
 echo Download REPO
 curl -s -o /etc/yum.repos.d/mongodb.repo https://raw.githubusercontent.com/roboshop-devops-project/mongodb/main/mongo.repo
 STAT $?
@@ -29,9 +31,9 @@ unzip mongodb.zip
 cd mongodb-main
 
 echo LOAD SCHEMA
-mongo < catalogue.js
+${COMPONENT} < catalogue.js
 STAT $?
 
 echo LOAD SCHEMA USER
-mongo < users.js
+${COMPONENT} < users.js
 STAT $?
