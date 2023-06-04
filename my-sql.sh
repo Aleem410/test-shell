@@ -23,7 +23,7 @@ echo install mysql
 yum install mysql-community-server -y
 STAT $?
 
-STARTUP
+
 #echo enable mysql
 #systemctl enable mysqld
 #STAT $?
@@ -53,4 +53,4 @@ cd /tmp
  unzip ${COMPONENT}.zip
  cd ${COMPONENT}-main
  mysql -u root -p${my_sql_password} <shipping.sql
-
+STARTUP
