@@ -43,17 +43,14 @@ then
 fi
 
 
-if [[ -z "$USER" ]]
-then
-  echo enter root password
- fi
+PASSWORD = $1
 echo SECURE INSTALLATION
 mysql_secure_installation
 
-#if [ $? -eq 0 ]
-#then
-#  echo "SUCCESS"
-#fi
+if [ $? -eq 0 ]
+then
+  echo "SUCCESS"
+fi
 
 #echo LOGIN MYSQL
 #mysql -uroot -pRoboShop@1
