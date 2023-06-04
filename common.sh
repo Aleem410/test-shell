@@ -22,7 +22,7 @@ NODEJS() {
   STAT $?
 
   PRINT "ADDING USER"
- if [ $? -ne 0 ]: then
+ if [ $? -ne 0 ]; then
   useradd roboshop
  fi
   STAT $?
