@@ -41,4 +41,26 @@ then
  cat /tmp/sql_root_passwd | mysql --connect-expired-password -uroot -p"${DEFAULT_PASSWORD}"
 fi
 
+echo SECURE INSTALLATION
+mysql_secure_installation
+if [ $? -eq 0 ]
+then
+  echo "SUCCESS"
+fi
+
+echo LOGIN MYSQL
+mysql -uroot -pRoboShop@1
+if [ $? -eq 0 ]
+then
+  echo "SUCCESS"
+fi
+
+echo UNISTALL PLUGIN
+uninstall plugin validate_password;
+if [ $? -eq 0 ]
+then
+  echo "SUCCESS"
+fi
+
+
 
