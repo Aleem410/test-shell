@@ -32,7 +32,7 @@ NODEJS() {
   STAT $?
 
   cd /home/roboshop
-  unzip /tmp/cart.zip
+  unzip /tmp/${COMPONENT}.zip
   mv ${COMPONENT}-main cart
   cd ${COMPONENT}
 
