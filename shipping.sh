@@ -11,9 +11,9 @@ PRINT "ADDING USER"
  fi
   STAT $?
 
-APP_LOC=/home/roboshop
-DOWNLOAD_APP_CODE
 
+DOWNLOAD_APP_CODE
+APP_LOC=/home/roboshop
 #cd /home/roboshop
 #$ curl -s -L -o /tmp/shipping.zip "https://github.com/roboshop-devops-project/shipping/archive/main.zip"
 #$ unzip /tmp/shipping.zip
