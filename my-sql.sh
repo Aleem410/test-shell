@@ -62,7 +62,7 @@ mysql_secure_installation
 #  echo "SUCCESS"
 #fi
 #
-echo "show plugins" | mysql -uroot -pRoboShop@1
+echo "show plugins" | mysql -uroot -pRoboShop@1 | grep validate_password
 #echo UNISTALL PLUGIN
 #
 #uninstall plugin validate_password;
