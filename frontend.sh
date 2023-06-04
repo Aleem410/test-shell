@@ -1,7 +1,8 @@
 source common.sh
 COMPONENT=frontend
+APP_LOC=/usr/share/nginx/html
 
-echo INstall NGINX
+PRINT "INstall NGINX"
 yum install nginx -y
 STAT $?
 
@@ -12,14 +13,15 @@ STAT $?
 #echo START NGINX
 #systemctl start nginx
 #STAT $?
+DOWNLOAD_APP-CODE
+exit
+#curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/roboshop-devops-project/${COMPONENT}/archive/main.zip"
+#
+#STAT $?
 
-curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/roboshop-devops-project/${COMPONENT}/archive/main.zip"
-
-STAT $?
-
-cd /usr/share/nginx/html
-rm -rf *
-unzip /tmp/${COMPONENT}.zip
+#cd /usr/share/nginx/html
+#rm -rf *
+#unzip /tmp/${COMPONENT}.zip
 mv ${COMPONENT}-main/static/* .
 mv ${COMPONENT}-main/localhost.conf /etc/nginx/default.d/roboshop.conf
 
