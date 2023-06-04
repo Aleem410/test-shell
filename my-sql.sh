@@ -20,7 +20,7 @@ curl -s -L -o /etc/yum.repos.d/mysql.repo https://raw.githubusercontent.com/robo
 STAT $?
 
 echo disable dnf module
-dnf module disable mysql
+dnf module disable mysql -y
 STAT $?
 
 echo install mysql
