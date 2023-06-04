@@ -41,7 +41,9 @@ NODEJS() {
   STAT $?
 
   PRINT "MOVING COMPONENT"
+  if [ $? -eq 0 ]; then
   mv /home/roboshop/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service
+  fi
   STAT $?
   STARTUP
 #  PRINT "SYSTEM RELOAD"
