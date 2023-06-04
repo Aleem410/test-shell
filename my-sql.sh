@@ -7,9 +7,9 @@ my_sql_password=$1
 
 STAT() {
   if [ "$1" -eq 0 ]
-  then
+   then
     echo "SUCCESS"
-  else
+   else
     echo "failure"
     exit
   fi
