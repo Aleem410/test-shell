@@ -1,44 +1,39 @@
 my_sql_password=$1
-if [ -z $1 ]
+
+STAT() {
+  if [ $1 -eq 0 ]
+  then
+    echo "SUCCESS"
+  else
+    echo "failure"
+    exit
+  fi
+}
+
+if [ -z "$1" ]
 then
   echo PASSWORD is required
   exit
 fi
 echo dowmload mysql repo
 curl -s -L -o /etc/yum.repos.d/mysql.repo https://raw.githubusercontent.com/roboshop-devops-project/mysql/main/mysql.repo
-if [ $? -eq 0 ]
-then
-  echo "SUCCESS"
-fi
+STAT $?
 
 echo disable dnf module
 dnf module disable mysql
-if [ $? -eq 0 ]
-then
-  echo "SUCCESS"
-fi
+STAT $?
 
 echo install mysql
 yum install mysql-community-server -y
-if [ $? -eq 0 ]
-then
-  echo "SUCCESS"
-fi
+STAT $?
 
 echo enable mysql
 systemctl enable mysqld
-if [ $? -eq 0 ]
-then
-  echo "SUCCESS"
-fi
+STAT $?
 
 echo start mysql
 systemctl start mysqld
-if [ $? -eq 0 ]
-then
-  echo "SUCCESS"
-fi
-
+STAT $?
 echo show databases | mysql -uroot -p${my_sql_password}
 
 if [ $? -ne 0 ]
