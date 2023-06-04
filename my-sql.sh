@@ -3,11 +3,10 @@ then
   echo PASSWORD is required
   exit
 fi
-
 my_sql_password=$1
 
 STAT() {
-  if [ $1 -eq 0 ]
+  if [ "$1" -eq 0 ]
   then
     echo "SUCCESS"
   else
