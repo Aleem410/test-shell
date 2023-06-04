@@ -1,3 +1,5 @@
+my-sql-password=$1
+
 echo dowmload mysql repo
 curl -s -L -o /etc/yum.repos.d/mysql.repo https://raw.githubusercontent.com/roboshop-devops-project/mysql/main/mysql.repo
 if [ $? -eq 0 ]
@@ -33,17 +35,16 @@ then
   echo "SUCCESS"
 fi
 
-echo show databases | mysql -uroot -pRoboShop@1
+echo show databases | mysql -uroot -p${my-sql-password}
 
 if [ $? -ne 0 ]
 then
- echo "ALTER USER 'root'@'localhost' IDENTIFIED BY 'RoboShop@1';" > /tmp/sql_root_passwd
+ echo "ALTER USER 'root'@'localhost' IDENTIFIED BY '${my-sql-password}';" > /tmp/sql_root_passwd
  DEFAULT_PASSWORD=$(grep 'A temporary password' /var/log/mysqld.log | awk '{print $NF}')
  cat /tmp/sql_root_passwd | mysql --connect-expired-password -uroot -p"${DEFAULT_PASSWORD}"
 fi
 
 
-PASSWORD = $1
 echo SECURE INSTALLATION
 mysql_secure_installation
 
@@ -59,7 +60,7 @@ fi
 #  echo "SUCCESS"
 #fi
 #
-echo "show plugins" | mysql -uroot -pRoboShop@1 | grep validate_password
+echo "show plugins" | mysql -uroot -p${my-sql-password} | grep validate_password
 #echo UNISTALL PLUGIN
 #
 #uninstall plugin validate_password;
