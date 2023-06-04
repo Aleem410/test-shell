@@ -1,4 +1,4 @@
-my-sql-password=$1
+my_sql_password=$1
 
 echo dowmload mysql repo
 curl -s -L -o /etc/yum.repos.d/mysql.repo https://raw.githubusercontent.com/roboshop-devops-project/mysql/main/mysql.repo
@@ -35,11 +35,11 @@ then
   echo "SUCCESS"
 fi
 
-echo show databases | mysql -uroot -p${my-sql-password}
+echo show databases | mysql -uroot -p${my_sql_password}
 
 if [ $? -ne 0 ]
 then
- echo "ALTER USER 'root'@'localhost' IDENTIFIED BY '${my-sql-password}';" > /tmp/sql_root_passwd
+ echo "ALTER USER 'root'@'localhost' IDENTIFIED BY '${my_sql_password}';" > /tmp/sql_root_passwd
  DEFAULT_PASSWORD=$(grep 'A temporary password' /var/log/mysqld.log | awk '{print $NF}')
  cat /tmp/sql_root_passwd | mysql --connect-expired-password -uroot -p"${DEFAULT_PASSWORD}"
 fi
