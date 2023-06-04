@@ -62,11 +62,11 @@ STARTUP() {
   PRINT "SYSTEM RELOAD"
    systemctl daemon-reload
    STAT $?
-  PRINT "START CART"
+  PRINT "START ${COMPONENT}"
    systemctl start ${COMPONENT}
    STAT $?
 
-  PRINT "ENABLE CART"
+  PRINT "ENABLE ${COMPONENT}"
    systemctl enable ${COMPONENT}
    STAT $?
 }
