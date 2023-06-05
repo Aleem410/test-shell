@@ -32,5 +32,7 @@ STAT $?
 
 mv target/${COMPONENT}-1.0.jar ${COMPONENT}.jar
 
-# mv /home/roboshop/shipping/systemd.service /etc/systemd/system/shipping.service
-#STARTUP
+sed -i -e 's/CARTENDPOINT/172.31.66.198/' -e 's/DBHOST/172.31.86.220/' /home/roboshop/shipping/systemd.service
+
+ mv /home/roboshop/shipping/systemd.service /etc/systemd/system/shipping.service
+STARTUP
