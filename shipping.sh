@@ -1,5 +1,6 @@
 source common.sh
 COMPONENT=shipping
+APP_LOC=/home/roboshop
 
 PRINT "INSTALL MAVEN"
 yum install maven -y
@@ -13,7 +14,7 @@ PRINT "ADDING USER"
 
 
 DOWNLOAD_APP_CODE
-APP_LOC=/home/roboshop
+
 #cd /home/roboshop
 #$ curl -s -L -o /tmp/shipping.zip "https://github.com/roboshop-devops-project/shipping/archive/main.zip"
 #$ unzip /tmp/shipping.zip
@@ -31,5 +32,5 @@ STAT $?
 
 mv target/$COMPONENT-1.0.jar $COMPONENT.jar
 
-# mv /home/roboshop/shipping/systemd.service /etc/systemd/system/shipping.service
+ mv /home/roboshop/shipping/systemd.service /etc/systemd/system/shipping.service
 STARTUP

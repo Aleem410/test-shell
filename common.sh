@@ -15,7 +15,7 @@ PRINT() {
 DOWNLOAD_APP_CODE() {
 PRINT "REMOVE PRVIOUS VERSION"
   cd $APP_LOC
-    rm -rf *
+#    rm -rf *
     STAT $?
 
 PRINT "DOWNLOADING ZIP FILE"
