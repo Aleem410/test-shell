@@ -7,10 +7,10 @@ yum install maven -y
 STAT $?
 
 PRINT "ADDING USER"
- if [ $? -ne 0 ]; then
+# if [ $? -ne 0 ]; then
   useradd roboshop
- fi
-  STAT $?
+# fi
+ STAT $?
 
 
 DOWNLOAD_APP_CODE
