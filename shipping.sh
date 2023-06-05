@@ -23,14 +23,14 @@ mv ${COMPONENT}-main ${COMPONENT}
 STAT $?
 
 PRINT "ENTER"
-cd $COMPONENT
+cd ${COMPONENT}
 STAT $?
 
 PRINT "MVN CLEAN"
 mvn clean package
 STAT $?
 
-mv target/$COMPONENT-1.0.jar $COMPONENT.jar
+mv target/${COMPONENT}-1.0.jar ${COMPONENT}.jar
 
 # mv /home/roboshop/shipping/systemd.service /etc/systemd/system/shipping.service
 #STARTUP
