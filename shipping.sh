@@ -19,9 +19,7 @@ DOWNLOAD_APP_CODE
 #$ curl -s -L -o /tmp/shipping.zip "https://github.com/roboshop-devops-project/shipping/archive/main.zip"
 #$ unzip /tmp/shipping.zip
 PRINT "COMPONENT"
-if [ $? -ne 0 ]; then
 mv ${COMPONENT}-main ${COMPONENT}
-fi
 STAT $?
 
 PRINT "ENTER"
