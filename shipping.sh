@@ -18,13 +18,13 @@ DOWNLOAD_APP_CODE
 #cd /home/roboshop
 #$ curl -s -L -o /tmp/shipping.zip "https://github.com/roboshop-devops-project/shipping/archive/main.zip"
 #$ unzip /tmp/shipping.zip
-PRINT "COMPONENT"
-mv ${COMPONENT}-main ${COMPONENT}
-STAT $?
-
-PRINT "ENTER"
-cd $COMPONENT
-STAT $?
+#PRINT "COMPONENT"
+#mv ${COMPONENT}-main ${COMPONENT}
+#STAT $?
+#
+#PRINT "ENTER"
+#cd $COMPONENT
+#STAT $?
 
 PRINT "MVN CLEAN"
 mvn clean package
