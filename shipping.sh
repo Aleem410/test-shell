@@ -12,7 +12,6 @@ PRINT "ADDING USER"
  fi
  STAT $?
 
-
 DOWNLOAD_APP_CODE
 exit
 #cd /home/roboshop
