@@ -25,6 +25,6 @@ DOWNLOAD_APP_CODE
 mv ${COMPONENT}-main/static/* .
 mv ${COMPONENT}-main/localhost.conf /etc/nginx/default.d/roboshop.conf
 
-sed -i -e '/catalogue/ s/localhost/172.31.24.111/' -e '/user/ s/localhost/172.31.22.94/' -e '/cart/ s/localhost/172.31.66.198/' /etc/nginx/default.d/roboshop.conf
+sed -i -e '/catalogue/ s/localhost/172.31.24.111/' -e '/user/ s/localhost/172.31.22.94/' -e '/cart/ s/localhost/172.31.66.198/' -e '/shipping/ s/localhost/172.31.87.134/' /etc/nginx/default.d/roboshop.conf
 #systemctl restart nginx
 STARTUP
