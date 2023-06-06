@@ -11,8 +11,8 @@ unzip /tmp/payment.zip
  cd /home/roboshop/payment
  pip3 install -r requirements.txt
 
-USER_ID=${id u roboshop}
-GROUP_ID=${id g roboshop}
+USER_ID=${id -u roboshop}
+GROUP_ID=${id -g roboshop}
 
 
  sed -i -e "/uid c uid = ${USER_ID}/" -e "/uid c gid = ${GROUP_ID}/" /home/robooshop/payment/payment.ini
