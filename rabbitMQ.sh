@@ -26,6 +26,8 @@ PRINT "START RABBITMQ"
 systemctl start rabbitmq-server
 STAT $?
 
+if [ -z $1 ]; then
  rabbitmqctl add_user roboshop ${RABBITMQ_PASSWORD}
+ fi
 rabbitmqctl set_user_tags roboshop administrator
 rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"
