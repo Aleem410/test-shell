@@ -13,8 +13,8 @@ USER_ID=${id -u roboshop}
 GROUP_ID=${id -g roboshop}
 
 
- sed -i -e "/uid c uid = ${USER_ID}" -e "/uid c gid = ${GROUP_ID}" payment.ini
-exit
+ sed -i -e 'uid/ c uid = ${USER_ID}' -e '/gid/ c gid = ${GROUP_ID}' payment.ini
+ exit
  sed -i -e 's/CARTHOST/172.31.66.198/' -e 's/USERHOST/172.31.22.94/' -e 's/USERHOST/172.31.22.94/' -e 's/AMQPHOST/172.31.86.220/' /etc/redis.conf /etc/redis/redis.conf
 
 STARTUP
