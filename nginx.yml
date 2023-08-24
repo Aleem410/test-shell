@@ -1,4 +1,5 @@
 - name: install nginx latest version
+  hosts: localhost
   ansible.builtin.yum:
     name: nginx
     state: latest
