@@ -1,9 +1,7 @@
 - name: install nginx latest version
-  hosts: localhost
-  tasks:
-    - name: install NGINX
-      ansible.builtin.yum:
-       state: installed
+  ansible.builtin.yum:
+    name: nginx
+    state: installed
 
 #
 #- name: demo play
