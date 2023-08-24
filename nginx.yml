@@ -1,4 +1,4 @@
-- name: Install the latest version of nginx
+- name: install nginx latest version
   ansible.builtin.yum:
     name: nginx
     state: latest
