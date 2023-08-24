@@ -1,8 +1,10 @@
 - name: install nginx latest version
-  hosts: all
-  ansible.builtin.yum:
-    name: nginx
-    state: latest
+  hosts: localhost
+  tasks:
+    - name: install NGINX
+      ansible.builtin.yum:
+      state: latest
+
 #
 #- name: demo play
 #  hosts: all
