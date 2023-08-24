@@ -3,7 +3,7 @@
   tasks:
     - name: install NGINX
       ansible.builtin.yum:
-      state: latest
+       state: latest
 
 #
 #- name: demo play
