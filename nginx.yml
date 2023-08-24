@@ -3,3 +3,4 @@
   ansible.builtin.yum:
     name: nginx
     state: latest
+
