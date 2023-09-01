@@ -36,6 +36,7 @@
       ansible.builtin.unarchive:
         src: https://github.com/Aleem410/frontend/archive/refs/heads/main.zip
         dest: "/tmp"
+        remote_src: no
 
 
 
