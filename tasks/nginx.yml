@@ -1,5 +1,5 @@
 - name: install nginx
-  hosts: all
+  hosts: localhost
   tasks:
     - name: nginx latest install
       ansible.builtin.yum:
