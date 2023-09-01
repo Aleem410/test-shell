@@ -24,8 +24,9 @@
 - name: remove existing content
   hosts: localhost
   tasks:
-    ansible.builtin.file:
-     path: /usr/share/nginx/html
-     state: absent
+    - name: remove file
+      ansible.builtin.file:
+        path: /usr/share/nginx/html
+        state: absent
 
 
