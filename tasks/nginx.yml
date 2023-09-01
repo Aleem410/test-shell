@@ -11,7 +11,7 @@
 #      ansible.builtin.debug:
 #        msg: hello
 
-- name: demo on play
+- name: demo on vars
   hosts: localhost
   vars:
     URL: play.example.com
@@ -20,4 +20,12 @@
       ansible.builtin.debug:
         msg: URL - {{URL}}
 
+- name: demo on vars
+  hosts: localhost
+  tasks:
+    - vars:
+        URL: play.example.com
+    - name: print URL
+      ansible.builtin.debug:
+        msg: URL - {{URL}}
 
