@@ -21,5 +21,8 @@
     - name: download nginx docs
       ansible.builtin.shell: curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
 
-
+- name: Recursively remove existing content
+  ansible.builtin.file:
+    path: /usr/share/nginx/html
+    state: absent
 
