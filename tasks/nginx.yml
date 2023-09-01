@@ -15,4 +15,11 @@
         state: started
         enabled: yes
 
+- name: download nginx docs
+  hosts: localhost
+  tasks:
+    - name: download nginx docs
+      ansible.builtin.shell: curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip"
+
+
 
