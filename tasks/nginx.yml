@@ -34,7 +34,7 @@
   tasks:
     - name: unarchieve file
       ansible.builtin.unarchive:
-        src: https://github.com/Aleem410/frontend/archive/refs/heads/main.zip
+        src: https://github.com/roboshop-devops-project/frontend/archive/main.zip
         dest: "/tmp"
         remote_src: no
 
