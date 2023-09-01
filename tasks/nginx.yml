@@ -6,3 +6,13 @@
         name: nginx
         state: installed
 
+- name: start nginx
+  hosts: localhost
+  tasks:
+    - name: start nginx
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: yes
+
+
