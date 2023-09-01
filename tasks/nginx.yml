@@ -13,9 +13,11 @@
 
 - name: demo on play
   hosts: localhost
+  vars:
+    URL: play.example.com
   tasks:
-    - name: print hello
+    - name: print URL
       ansible.builtin.debug:
-        msg: hello
+        msg: URL - "URL"
 
 
