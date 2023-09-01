@@ -43,7 +43,7 @@
   tasks:
     - name: copy roboshop content
       ansible.builtin.copy:
-       src: frontend-main/localhost.conf
+       src: /tmp/frontend-main/localhost.conf
        dest: /etc/nginx/default.d/roboshop.conf
        remote_src: yes
 
