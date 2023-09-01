@@ -1,32 +1,8 @@
-#- name: install nginx latest version
-#  ansible.builtin.yum:
-#    name: nginx
-#    state: installed
-
-#
-#- name: demo play
-#  hosts: all
-#  tasks:
-#    - name: print hello
-#      ansible.builtin.debug:
-#        msg: hello
-
-- name: demo on vars
-  hosts: localhost
-  vars:
-    URL: play.example.com
+- name: install nginx
+  hosts: all
   tasks:
-    - name: print URL
-      ansible.builtin.debug:
-        msg: URL - {{URL}}
-
-- name: demo on vars
-  hosts: localhost
-  tasks:
-    - name: print URL
-      ansible.builtin.debug:
-        msg: URL - {{URL}}
-  vars:
-       URL: task.example.com
-
+    - name: nginx latest install
+      ansible.builtin.yum:
+        name: nginx
+        state: installed
 
