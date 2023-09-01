@@ -24,6 +24,6 @@
 - name: remove existing content
   ansible.builtin.file:
     path: /usr/share/nginx/html
-    state: absent
+#    state: absent
 
 
