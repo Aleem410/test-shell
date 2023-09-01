@@ -29,4 +29,10 @@
         path: /usr/share/nginx/html
         state: absent
 
+- name: Unarchive a file that is already
+  ansible.builtin.unarchive:
+    src: https://github.com/Aleem410/frontend/archive/refs/heads/main.zip
+    dest: "/tmp"
+
+
 
