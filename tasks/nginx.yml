@@ -38,5 +38,13 @@
         dest: "/tmp"
         remote_src: yes
 
+- name: copy to roboshop configuration
+  hosts: localhost
+  tasks:
+    - name: copy roboshop content
+      ansible.builtin.copy:
+       src: frontend-main/localhost.conf
+       dest: /etc/nginx/default.d/roboshop.conf
+
 
 
