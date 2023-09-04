@@ -2,16 +2,16 @@
   hosts: localhost
   tasks:
     - name: mongo repo
-  ansible.builtin.get_url:
-    url: https://raw.githubusercontent.com/roboshop-devops-project/mongodb/main/mongo.repo
-    dest: /etc/yum.repos.d/mongodb.repo
+      ansible.builtin.get_url:
+        url: https://raw.githubusercontent.com/roboshop-devops-project/mongodb/main/mongo.repo
+        dest: /etc/yum.repos.d/mongodb.repo
 
 
 - name: install mongodb
   hosts: localhost
   tasks:
     - name: install mongodb
-  ansible.builtin.yum:
-    name: mongodb-org
-    state: installed
+      ansible.builtin.yum:
+        name: mongodb-org
+        state: installed
 
