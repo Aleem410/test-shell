@@ -1,9 +1,15 @@
 - name: download mongo repo
+  hosts: localhost
+  tasks:
+    - name: mongo repo
   ansible.builtin.copy:
     src: mongo.repo
     dest: /etc/yum.repos.d/mongodb.repo
 
 - name: install mongodb
+  hosts: localhost
+  tasks:
+    - name: install mongodb
   ansible.builtin.yum:
     name: mongodb-org
     state: installed
