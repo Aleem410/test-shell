@@ -10,11 +10,13 @@
 
 
 - name: install mongodb
+  hosts: localhost
   ansible.builtin.yum:
     name: mongodb-org
     state: installed
 
 - name: include systemd service from common
+  hosts: localhost
   ansible.builtin.include_role:
     name: common
     tasks_from: main.yml
