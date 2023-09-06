@@ -5,9 +5,9 @@
 - name: download mongo repo
   hosts: localhost
   ansible.builtin.copy:
-    src: mongo.repo
+    src: mongo/files/mongo.repo
     dest: /etc/yum.repos.d/mongodb.repo
-    remote_src: yes
+
 
 - name: install mongodb
   ansible.builtin.yum:
