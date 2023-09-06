@@ -4,6 +4,7 @@
 #    dest: /etc/yum.repos.d/mongodb.repo
 - name: download mongo repo
   hosts: localhost
+  connection: local
   ansible.builtin.copy:
     src: mongo.txt
     dest: /etc/yum.repos.d/mongodb.repo
@@ -11,12 +12,14 @@
 
 - name: install mongodb
   hosts: localhost
+  connection: local
   ansible.builtin.yum:
     name: mongodb-org
     state: installed
 
 - name: include systemd service from common
   hosts: localhost
+  connection: local
   ansible.builtin.include_role:
     name: common
     tasks_from: main.yml
