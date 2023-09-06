@@ -3,6 +3,7 @@
 #    url: https://raw.githubusercontent.com/roboshop-devops-project/mongodb/main/mongo.repo
 #    dest: /etc/yum.repos.d/mongodb.repo
 - name: download mongo repo
+  hosts: localhost
   ansible.builtin.copy:
     src: mongo.repo
     dest: /etc/yum.repos.d/mongodb.repo
