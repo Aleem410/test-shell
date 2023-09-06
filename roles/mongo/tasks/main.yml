@@ -1,0 +1,19 @@
+#- name: download mongo repo
+#  ansible.builtin.get_url:
+#    url: https://raw.githubusercontent.com/roboshop-devops-project/mongodb/main/mongo.repo
+#    dest: /etc/yum.repos.d/mongodb.repo
+- name: download mongo repo
+  ansible.builtin.copy:
+    src: mongo.repo
+    dest: /etc/yum.repos.d/mongodb.repo
+
+- name: install mongodb
+  ansible.builtin.yum:
+    name: mongodb-org
+    state: installed
+
+- name: include systemd service from common
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: main.yml
+
